@@ -1,0 +1,260 @@
+﻿:root {
+  --bg: #03070e;
+  --bg-2: #060d1b;
+  --panel: #0b1324;
+  --panel-2: #0f1a2f;
+  --line: #1d2a45;
+  --text: #e5f1ff;
+  --muted: #8ea4c7;
+  --cyan: #10d9ff;
+  --cyan-soft: rgba(16, 217, 255, 0.18);
+  --good: #37ffb1;
+  --danger: #ff6575;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sora), "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 18% -20%, #0e2b49 0%, transparent 48%),
+    radial-gradient(circle at 92% 0%, #11223f 0%, transparent 40%),
+    linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+.dashboard {
+  width: min(1320px, 94vw);
+  margin: 0 auto;
+  padding: 34px 0 52px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 1.2rem + 1.7vw, 2.8rem);
+  line-height: 1.12;
+}
+
+.intro {
+  max-width: 680px;
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.intro code {
+  color: var(--text);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #02b5ff 0%, #02deff 100%);
+  color: #021120;
+  font-weight: 700;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 24px rgba(2, 222, 255, 0.24);
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.error {
+  margin: 8px 0 14px;
+  color: var(--danger);
+}
+
+.stats-grid,
+.growth-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.growth-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.panel {
+  margin-top: 16px;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.panel-head h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.panel-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.panel-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeframe-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.time-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #0a1428;
+  color: var(--muted);
+  padding: 7px 11px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.time-btn:hover {
+  border-color: #2f4d7f;
+  color: var(--text);
+}
+
+.time-btn.active {
+  color: #001522;
+  background: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.stat-card,
+.chart-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+    linear-gradient(150deg, var(--panel) 0%, var(--panel-2) 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.chart-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.label {
+  margin: 0 0 8px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.value {
+  margin: 0;
+  font-size: clamp(1.3rem, 1.04rem + 1vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.detail {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.compact .value {
+  font-size: clamp(1.1rem, 0.96rem + 0.8vw, 1.8rem);
+}
+
+@media (max-width: 920px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-actions {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .stats-grid,
+  .growth-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .panel-tools {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeframe-picker {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 1240px) {
+  .growth-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  .growth-grid {
+    grid-template-columns: 1fr;
+  }
+}
