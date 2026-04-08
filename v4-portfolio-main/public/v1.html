@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://graphstats-portfolio.vercel.app/ -->
+<html lang="en"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraphStats</title>
+  <script src="./GraphStats_files/saved_resource"></script><script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;]" data-dynamic-id="cf9fcbeb-255c-4190-8683-56c4f1792c50" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/traffic.js"></script>
+  <link href="./GraphStats_files/css2" rel="stylesheet">
+  <link href="./GraphStats_files/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./GraphStats_files/animate.min.css">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-light: #818cf8;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #f8fafc;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+
+    .glass-card {
+      background: rgba(15, 15, 17, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.15);
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .glow-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glow-effect::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(99, 102, 241, 0.1),
+        transparent
+      );
+      transition: all 0.6s ease;
+    }
+
+    .glow-effect:hover::before {
+      left: 100%;
+    }
+
+    .animated-border {
+      position: relative;
+    }
+
+    .animated-border::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      transition: width 0.4s ease;
+    }
+
+    .animated-border:hover::after {
+      width: 100%;
+    }
+
+    .input-field {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, #f8fafc, #cbd5e1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .bg-grid {
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .scale-in {
+      animation: scaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+  <script>
+  const translations = {    fr: {
+      navProjects: "Projects",
+      navStack: "Stack",
+      navContact: "Contact",
+      heroTitle: "GraphStats",
+      heroDescription: "Passionate about <span class='font-semibold text-white'>YouTube stats</span>, <span class='font-semibold text-white'>dynamic</span> interfaces, and <span class='font-semibold text-white'>real-time</span> data. I create modern web experiences with high-performance technologies.",
+      heroProjects: "View my projects",
+      heroContact: "Contact me",
+      projectsTitle: "My Projects",
+      projectsDescription: "Discover my work that combines modern design and advanced features.",
+      contactTitle: "Contact Me",
+      contactDescription: "Do you have a project or a question? Send me a message, and I'll respond quickly.",
+      contactName: "Your Name",
+      contactEmail: "Your Email",
+      contactSubject: "Subject",
+      contactMessage: "Your Message",
+      contactButton: "Send Message",
+      footerText: "Creator of data-driven web experiences.",
+    },
+    en: {
+      navProjects: "Projects",
+      navStack: "Stack",
+      navContact: "Contact",
+      heroTitle: "GraphStats",
+      heroDescription: "Passionate about <span class='font-semibold text-white'>YouTube stats</span>, <span class='font-semibold text-white'>dynamic</span> interfaces, and <span class='font-semibold text-white'>real-time</span> data. I create modern web experiences with high-performance technologies.",
+      heroProjects: "View my projects",
+      heroContact: "Contact me",
+      projectsTitle: "My Projects",
+      projectsDescription: "Discover my work that combines modern design and advanced features.",
+      contactTitle: "Contact Me",
+      contactDescription: "Do you have a project or a question? Send me a message, and I'll respond quickly.",
+      contactName: "Your Name",
+      contactEmail: "Your Email",
+      contactSubject: "Subject",
+      contactMessage: "Your Message",
+      contactButton: "Send Message",
+      footerText: "Creator of data-driven web experiences.",
+    },
+  };
+
+  function switchLanguage(lang) {
+    document.querySelector("[data-nav-projects]").textContent = translations[lang].navProjects;
+    document.querySelector("[data-nav-stack]").textContent = translations[lang].navStack;
+    document.querySelector("[data-nav-contact]").textContent = translations[lang].navContact;
+    document.querySelector("[data-hero-title]").textContent = translations[lang].heroTitle;
+      <p class="text-xl text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed" data-hero-description="">Passionate about <span class="font-semibold text-white">YouTube stats</span>, <span class="font-semibold text-white">dynamic</span> interfaces, and <span class="font-semibold text-white">real-time</span> data. I create modern web experiences with high-performance technologies.</p>
+    document.querySelector("[data-hero-projects]").textContent = translations[lang].heroProjects;
+    document.querySelector("[data-hero-contact]").textContent = translations[lang].heroContact;
+    document.querySelector("[data-projects-title]").textContent = translations[lang].projectsTitle;
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-16 animate-on-scroll" data-projects-description="">Discover my work that combines modern design and advanced features.</p>
+    document.querySelector("[data-contact-title]").textContent = translations[lang].contactTitle;
+    document.querySelector("[data-contact-description]").textContent = translations[lang].contactDescription;
+    document.querySelector("[data-contact-name]").textContent = translations[lang].contactName;
+    document.querySelector("[data-contact-email]").textContent = translations[lang].contactEmail;
+    document.querySelector("[data-contact-subject]").textContent = translations[lang].contactSubject;
+    document.querySelector("[data-contact-message]").textContent = translations[lang].contactMessage;
+    document.querySelector("[data-contact-button]").textContent = translations[lang].contactButton;
+          <p class="text-gray-500 mt-2" data-footer-text="">Creator of data-driven web experiences.</p>
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const defaultLang = "en";
+    switchLanguage(defaultLang);
+    
+    // Add animated elements
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+  });
+  </script>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-1\/3{bottom:33.333333%}.bottom-10{bottom:2.5rem}.left-0{left:0px}.left-1\/4{left:25%}.right-0{right:0px}.right-1\/3{right:33.333333%}.top-0{top:0px}.top-1\/4{top:25%}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-16{height:4rem}.h-4{height:1rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-8{height:2rem}.h-80{height:20rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-16{width:4rem}.w-4{width:1rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-8{width:2rem}.w-80{width:20rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-gray-900{--tw-border-opacity:1;border-color:rgb(17 24 39 / var(--tw-border-opacity, 1))}.bg-black\/50{background-color:rgb(0 0 0 / 0.5)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-gray-900\/50{background-color:rgb(17 24 39 / 0.5)}.bg-indigo-800\/20{background-color:rgb(55 48 163 / 0.2)}.bg-indigo-900\/30{background-color:rgb(49 46 129 / 0.3)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-black{--tw-gradient-from:#000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-indigo-900\/10{--tw-gradient-from:rgb(49 46 129 / 0.1) var(--tw-gradient-from-position);--tw-gradient-to:rgb(49 46 129 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-black\/80{--tw-gradient-to:rgb(0 0 0 / 0.8) var(--tw-gradient-to-position)}.to-gray-900\/50{--tw-gradient-to:rgb(17 24 39 / 0.5) var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pt-20{padding-top:5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-lg{--tw-backdrop-blur:blur(16px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.delay-500{transition-delay:500ms}.duration-300{transition-duration:300ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-indigo-500\/30:hover{border-color:rgb(99 102 241 / 0.3)}.hover\:bg-gray-900\/50:hover{background-color:rgb(17 24 39 / 0.5)}.hover\:text-indigo-300:hover{--tw-text-opacity:1;color:rgb(165 180 252 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-indigo-500\/20:hover{--tw-shadow-color:rgb(99 102 241 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.hover\:shadow-indigo-500\/30:hover{--tw-shadow-color:rgb(99 102 241 / 0.3);--tw-shadow:var(--tw-shadow-colored)}.focus\:border-indigo-500:focus{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}@media (min-width: 768px){.md\:mb-0{margin-bottom:0px}.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-7xl{font-size:4.5rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}}</style></head>
+<body class="bg-grid" data-aos-easing="ease-out-quart" data-aos-duration="800" data-aos-delay="0" __processed_32873227-e87d-45e2-b7e8-7ca468a1ae59__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZW5hYmxlZCIsIkNPTkZJRyI6ImRpc2FibGVkIn0sInZlcnNpb24iOiIyLjAuMzgiLCJzY29yZSI6MjAwMzgwfV0=">
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-lg z-50 border-b border-gray-900">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4" bis_skin_checked="1">
+      <a href="https://graphstats-portfolio.vercel.app/#" class="text-2xl font-bold gradient-text animate__animated animate__fadeIn">GraphStats</a>
+      <div class="hidden md:flex space-x-8" bis_skin_checked="1">
+        <a href="https://graphstats-portfolio.vercel.app/#projects" class="text-gray-300 hover:text-white animated-border py-2" data-nav-projects="">Projects</a>
+        <a href="https://graphstats-portfolio.vercel.app/#stack" class="text-gray-300 hover:text-white animated-border py-2" data-nav-stack="">Stack</a>
+        <a href="https://graphstats-portfolio.vercel.app/#contact" class="text-gray-300 hover:text-white animated-border py-2" data-nav-contact="">Contact</a>
+      </div>
+      <div class="flex items-center space-x-4" bis_skin_checked="1">
+        <button onclick="switchLanguage(&#39;fr&#39;)" class="text-gray-300 hover:text-white transition">FR</button>
+        <span class="text-gray-600">|</span>
+        <button onclick="switchLanguage(&#39;en&#39;)" class="text-gray-300 hover:text-white transition">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20 relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden" bis_skin_checked="1">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-indigo-900/30 blur-3xl animate-pulse" bis_skin_checked="1"></div>
+      <div class="absolute bottom-1/3 right-1/3 w-80 h-80 rounded-full bg-indigo-800/20 blur-3xl animate-pulse delay-500" bis_skin_checked="1"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-4xl aos-init aos-animate" data-aos="fade-up" bis_skin_checked="1">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text animate__animated animate__fadeInDown" data-hero-title="">GraphStats</h1>
+      <p class="text-xl text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed" data-hero-description="">Passionate about <span class="font-semibold text-white">YouTube stats</span>, <span class="font-semibold text-white">dynamic</span> interfaces, and <span class="font-semibold text-white">real-time</span> data. I create modern web experiences with high-performance technologies.</p>
+      <div class="mt-10 flex justify-center gap-4 animate-on-scroll scale-in fade-in" bis_skin_checked="1">
+        <a href="https://graphstats-portfolio.vercel.app/#projects" class="px-8 py-3 rounded-full gradient-bg text-white font-medium hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 transform hover:scale-105" data-hero-projects="">View my projects</a>
+        <a href="https://graphstats-portfolio.vercel.app/#contact" class="px-8 py-3 rounded-full border border-gray-700 text-gray-300 font-medium hover:bg-gray-900/50 hover:text-white transition-all duration-300" data-hero-contact="">Contact me</a>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-on-scroll scale-in fade-in" bis_skin_checked="1">
+      <div class="animate-bounce" bis_skin_checked="1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="px-6 py-24 relative" id="projects">
+    <div class="max-w-7xl mx-auto relative" bis_skin_checked="1">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center gradient-text animate-on-scroll" data-projects-title="">My Projects</h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-16 animate-on-scroll" data-projects-description="">Discover my work that combines modern design and advanced features.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" bis_skin_checked="1">
+        <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="200" bis_skin_checked="1">
+          <h3 class="text-xl font-semibold mb-2 text-white">DockyCount (Changed name)</h3>
+          <p class="text-gray-400 mb-4">Real-time YouTube subscriber counter with a futuristic interface and smooth animations.</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">JavaScript</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">API YouTube</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">UI/UX</span>
+          </div>
+          <a href="https://fast-count.vercel.app/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="400" bis_skin_checked="1">
+          <h3 class="text-xl font-semibold mb-2 text-white">Graphy Host (Closed)</h3>
+          <p class="text-gray-400 mb-4">A free-for-life hosting service built with CSS, HTML, JS, and Node.js.</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">CSS</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">HTML</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">JavaScript</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">Node.js</span>
+          </div>
+          <a href="https://github.com/GraphStats/graphy-host/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="600" bis_skin_checked="1">
+          <h3 class="text-xl font-semibold mb-2 text-white">DockyCount 2</h3>
+          <p class="text-gray-400 mb-4">Improved version of the YouTube subscriber counter with additional features.</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">JavaScript</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">API YouTube</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">UI/UX</span>
+          </div>
+          <a href="https://fastcount-2-beta.vercel.app/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="800" bis_skin_checked="1">
+          <h3 class="text-xl font-semibold mb-2 text-white">IPV6 Detector</h3>
+          <p class="text-gray-400 mb-4">Application that detects and displays information about IPv6 addresses.</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">JavaScript</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">HTML</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">CSS</span>
+          </div>
+          <a href="https://ipv6-detector-lunaria.vercel.app/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="1000" bis_skin_checked="1">
+          <p class="text-gray-400 mb-4">Real-time MrBeast subscriber counter with a modern, fluid interface.</p>
+          <p class="text-gray-400 mb-4">Real-time MrBeast subscriber counter with a modern, fluid interface.</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">JavaScript</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">API YouTube</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">UI/UX</span>
+          </div>
+          <a href="https://mrbeast-count.vercel.app/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="1200" bis_skin_checked="1">
+          <h3 class="text-xl font-semibold mb-2 text-white">444 Count (Closed)</h3>
+          <p class="text-gray-400 mb-4">A site to view follower counts in real time with an elegant interface.</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">JavaScript</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">API</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">UI/UX</span>
+          </div>
+          <a href="https://444-count.vercel.app/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="1200" bis_skin_checked="1">
+          <h3 class="text-xl font-semibold mb-2 text-white">DockyFocus</h3>
+          <p class="text-gray-400 mb-4">A site to help you focus on your tasks</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">HTML</span>
+          </div>
+          <a href="https://docky-focus.vercel.app/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="1200" bis_skin_checked="1">
+          <h3 class="text-xl font-semibold mb-2 text-white">DockyMusic</h3>
+          <p class="text-gray-400 mb-4">A site to listen to music</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">JS</span>
+          </div>
+          <a href="https://dockymusic.vercel.app/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+         <!-- Project Card -->
+        <div class="glass-card p-6 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="400" bis_skin_checked="1">
+          <h3 class="text-xl font-semibold mb-2 text-white">DockyHost (New)</h3>
+          <p class="text-gray-400 mb-4">A free-for-life hosting service built with Jexactyl</p>
+          <div class="flex flex-wrap gap-2 mb-4" bis_skin_checked="1">
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">Jexactyl</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">Free</span>
+            <span class="text-xs px-3 py-1 bg-gray-900/50 rounded-full text-gray-300">Server</span>
+          </div>
+          <a href="http://91.169.161.97:64000/" target="_blank" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition">
+            View project
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack Section -->
+  <section class="px-6 py-24 bg-gradient-to-b from-black to-gray-900/50" id="stack">
+    <div class="max-w-7xl mx-auto" bis_skin_checked="1">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center gradient-text animate-on-scroll">Ma stack technique</h2>
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+        The technologies I use to create modern, high-performance experiences.
+      </p>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6" bis_skin_checked="1">
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/html5-original.svg" alt="HTML5" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">HTML5</span>
+        </div>
+        
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="100" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/css3-original.svg" alt="CSS3" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">CSS3</span>
+        </div>
+        
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="200" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/javascript-original.svg" alt="JavaScript" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">JavaScript</span>
+        </div>
+
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="300" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/typescript-original.svg" alt="TypeScript" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">TypeScript</span>
+        </div>
+
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="400" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/java-original.svg" alt="Java" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">Java</span>
+        </div>
+        
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="500" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/nodejs-original.svg" alt="Node.js" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">Node.js</span>
+        </div>
+        
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="600" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/python-original.svg" alt="Python" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">Python</span>
+        </div>
+        
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="700" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/Tailwind_CSS_Logo.svg.png" alt="Tailwind CSS" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">Tailwind CSS</span>
+        </div>
+
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="800" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/googlecloud-original.svg" alt="Google Cloud" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">Google Cloud</span>
+        </div>
+        
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="900" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/Amazon_Web_Services_Logo.svg.png" alt="AWS" class="w-full h-10 object-contain">
+          </div>
+          <span class="text-white font-medium">AWS</span>
+        </div>
+        
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="1000" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/linux-original.svg" alt="Linux" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">Linux</span>
+        </div>
+        
+        <!-- Tech Item -->
+        <div class="flex flex-col items-center glass-card p-6 glow-effect hover:border-indigo-500/30 transition animate-on-scroll" data-aos-delay="1100" bis_skin_checked="1">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center" bis_skin_checked="1">
+            <img src="./GraphStats_files/windows8-original.svg" alt="Windows" class="w-full h-full">
+          </div>
+          <span class="text-white font-medium">Windows</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="px-6 py-24 relative overflow-hidden" id="contact">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/10 to-black/80" bis_skin_checked="1"></div>
+    
+    <div class="max-w-4xl mx-auto relative" bis_skin_checked="1">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center gradient-text animate-on-scroll aos-init" data-aos="fade-up" data-contact-title="">Contact Me</h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto text-center mb-16 animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="100" data-contact-description="">Do you have a project or a question? Send me a message, and I'll respond quickly.</p>
+      
+      <form class="glass-card p-8 glow-effect animate-on-scroll aos-init" data-aos="fade-up" data-aos-delay="200">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6" bis_skin_checked="1">
+          <div bis_skin_checked="1">
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-2" data-contact-name="">Your Name</label>
+            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg input-field border border-gray-800 focus:border-indigo-500 outline-none text-white" required="">
+          </div>
+          <div bis_skin_checked="1">
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-2" data-contact-email="">Your Email</label>
+            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg input-field border border-gray-800 focus:border-indigo-500 outline-none text-white" required="">
+          </div>
+        </div>
+        <div class="mb-6" bis_skin_checked="1">
+          <label for="subject" class="block text-sm font-medium text-gray-300 mb-2" data-contact-subject="">Subject</label>
+          <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg input-field border border-gray-800 focus:border-indigo-500 outline-none text-white" required="">
+        </div>
+        <div class="mb-6" bis_skin_checked="1">
+          <label for="message" class="block text-sm font-medium text-gray-300 mb-2" data-contact-message="">Your Message</label>
+          <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg input-field border border-gray-800 focus:border-indigo-500 outline-none text-white" required=""></textarea>
+        </div>
+        <button type="submit" class="w-full py-4 rounded-lg gradient-bg text-white font-medium hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 transform hover:scale-[1.02]" data-contact-button="">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-6 py-12 border-t border-gray-900 bg-black/50">
+    <div class="max-w-7xl mx-auto" bis_skin_checked="1">
+      <div class="flex flex-col md:flex-row justify-between items-center" bis_skin_checked="1">
+        <div class="mb-6 md:mb-0 animate-on-scroll" bis_skin_checked="1">
+          <a href="https://graphstats-portfolio.vercel.app/#" class="text-2xl font-bold gradient-text">GraphStats</a>
+          <p class="text-gray-500 mt-2" data-footer-text="">Creator of data-driven web experiences.</p>
+        </div>
+        
+        <div class="flex space-x-6 animate-on-scroll" bis_skin_checked="1">
+          <a href="https://github.com/GraphStats" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="mt-12 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center animate-on-scroll" bis_skin_checked="1">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">
+          ? 2025 GraphStats. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./GraphStats_files/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-quart'
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        if(this.getAttribute('href') === '#') return;
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scale-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animateElements.forEach(el => observer.observe(el));
+  </script>
+
+
+</body></html>

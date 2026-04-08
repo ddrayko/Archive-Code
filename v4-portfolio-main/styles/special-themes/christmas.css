@@ -1,0 +1,359 @@
+.special-christmas {
+    
+    --christmas-red: #C41E3A;
+    --christmas-green: #165B33;
+    --christmas-gold: #FFD700;
+    --christmas-white: #FFFAFA;
+    --holly-red: #DC143C;
+    --pine-green: #01796F;
+    --candy-cane: #FF6B6B;
+    --snow-white: #F0F8FF;
+
+    
+    --festive-silver: #C0C0C0;
+    --festive-bronze: #CD7F32;
+    --gingerbread: #8B4513;
+    --cranberry: #9F1D35;
+
+    
+    --primary: 0 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 120 60% 30%;
+    --accent-foreground: 0 0% 100%;
+    --ring: 0 70% 45%;
+    --border: 0 40% 60%;
+}
+
+.special-christmas.dark,
+.dark .special-christmas {
+    --background: 0 10% 8%;
+    --foreground: 0 10% 98%;
+    --card: 0 8% 10%;
+    --card-foreground: 0 10% 98%;
+    --popover: 0 8% 10%;
+    --popover-foreground: 0 10% 98%;
+    --primary: 0 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 120 40% 25%;
+    --secondary-foreground: 0 10% 98%;
+    --muted: 0 20% 15%;
+    --muted-foreground: 0 30% 70%;
+    --accent: 120 60% 35%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 40% 25%;
+    --input: 0 40% 25%;
+    --ring: 0 70% 50%;
+}
+
+.special-christmas:not(.dark) {
+    --background: 0 20% 98%;
+    --foreground: 0 30% 10%;
+    --card: 0 15% 96%;
+    --card-foreground: 0 30% 10%;
+    --popover: 0 15% 96%;
+    --popover-foreground: 0 30% 10%;
+    --primary: 0 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 120 30% 90%;
+    --secondary-foreground: 120 60% 20%;
+    --muted: 0 20% 92%;
+    --muted-foreground: 0 20% 40%;
+    --accent: 120 60% 35%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 30% 85%;
+    --input: 0 30% 85%;
+    --ring: 0 70% 45%;
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: snowfall linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+    user-select: none;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes christmas-lights {
+
+    0%,
+    100% {
+        opacity: 1;
+        filter: brightness(1.2);
+    }
+
+    50% {
+        opacity: 0.6;
+        filter: brightness(0.8);
+    }
+}
+
+@keyframes festive-shine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes warm-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(196, 30, 58, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(196, 30, 58, 0.6);
+    }
+}
+
+@keyframes garland-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes star-twinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+}
+
+.special-christmas .text-gradient,
+.special-christmas h1,
+.special-christmas h2 {
+    background: linear-gradient(135deg,
+            #C41E3A 0%,
+            #DC143C 20%,
+            #165B33 40%,
+            #01796F 60%,
+            #C41E3A 80%,
+            #DC143C 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: festive-shine 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(196, 30, 58, 0.4));
+}
+
+.special-christmas.dark header,
+.dark .special-christmas header {
+    background: linear-gradient(to bottom,
+            rgba(20, 10, 10, 0.95),
+            rgba(30, 15, 15, 0.9));
+    border-bottom: 2px solid rgba(196, 30, 58, 0.4);
+    box-shadow: 0 4px 20px rgba(196, 30, 58, 0.2);
+}
+
+.special-christmas:not(.dark) header {
+    background: rgb(255, 255, 255) !important;
+    border-bottom: 2px solid rgba(196, 30, 58, 0.3) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+}
+
+.special-christmas:not(.dark) header nav a,
+.special-christmas:not(.dark) header nav button,
+.special-christmas:not(.dark) header a,
+.special-christmas:not(.dark) header button {
+    color: rgb(30, 30, 30) !important;
+}
+
+.special-christmas:not(.dark) header nav a:hover,
+.special-christmas:not(.dark) header nav button:hover {
+    color: rgb(0, 0, 0) !important;
+}
+
+.special-christmas header .w-10.h-10 {
+    background: linear-gradient(135deg, #C41E3A, #165B33) !important;
+    animation: garland-rotate 30s linear infinite !important;
+    box-shadow: 0 0 25px rgba(196, 30, 58, 0.6) !important;
+}
+
+.special-christmas.dark footer,
+.dark .special-christmas footer {
+    background: linear-gradient(to top,
+            rgba(20, 10, 10, 0.95),
+            rgba(30, 15, 15, 0.9));
+    border-top: 2px solid rgba(196, 30, 58, 0.4);
+}
+
+.special-christmas:not(.dark) footer {
+    background: rgb(255, 255, 255) !important;
+    border-top: 2px solid rgba(196, 30, 58, 0.3) !important;
+    color: rgb(30, 30, 30) !important;
+}
+
+.special-christmas:not(.dark) footer p,
+.special-christmas:not(.dark) footer a,
+.special-christmas:not(.dark) footer h5,
+.special-christmas:not(.dark) footer li {
+    color: rgb(30, 30, 30) !important;
+}
+
+.special-christmas:not(.dark) footer a:hover {
+    color: rgb(0, 0, 0) !important;
+}
+
+.special-christmas a:hover {
+    color: #C41E3A;
+    text-shadow: 0 0 10px rgba(196, 30, 58, 0.5);
+}
+
+.special-christmas button,
+.special-christmas .button {
+    background: linear-gradient(135deg, #C41E3A, #DC143C);
+    border: 1px solid rgba(196, 30, 58, 0.5);
+    animation: warm-glow 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.special-christmas button:hover,
+.special-christmas .button:hover {
+    background: linear-gradient(135deg, #DC143C, #9F1D35);
+    box-shadow: 0 0 30px rgba(196, 30, 58, 0.8);
+    transform: translateY(-2px);
+}
+
+.special-christmas .glass,
+.special-christmas [class*="card"] {
+    border: 1px solid rgba(196, 30, 58, 0.3);
+    background: linear-gradient(135deg,
+            rgba(196, 30, 58, 0.05),
+            rgba(22, 91, 51, 0.05));
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.1);
+}
+
+.special-christmas svg,
+.special-christmas [class*="icon"] {
+    animation: star-twinkle 2s ease-in-out infinite;
+}
+
+.special-christmas ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.special-christmas ::-webkit-scrollbar-track {
+    background: linear-gradient(180deg,
+            rgba(196, 30, 58, 0.1),
+            rgba(22, 91, 51, 0.1));
+    border-radius: 10px;
+}
+
+.special-christmas ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #C41E3A, #165B33);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.special-christmas ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #DC143C, #01796F);
+}
+
+.special-christmas * {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="%23C41E3A" opacity="0.6"/><circle cx="12" cy="12" r="4" fill="%23FFFFFF"/></svg>'), auto;
+}
+
+.special-christmas ::selection {
+    background: rgba(196, 30, 58, 0.3);
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(196, 30, 58, 0.8);
+}
+
+.special-christmas .mesh-bg::before,
+.special-christmas .mesh-bg::after {
+    background: radial-gradient(circle,
+            rgba(196, 30, 58, 0.3) 0%,
+            rgba(22, 91, 51, 0.2) 50%,
+            transparent 100%);
+    animation: warm-glow 8s ease-in-out infinite;
+}
+
+.special-christmas header nav a,
+.special-christmas header nav button {
+    background: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    filter: none !important;
+}
+
+.special-christmas header nav a:hover,
+.special-christmas header nav button:hover {
+    color: inherit !important;
+    text-shadow: none !important;
+    transform: translateY(-2px) !important;
+    background: none !important;
+}
+
+.special-christmas header button[aria-label*="theme"],
+.special-christmas header button[aria-label*="Theme"],
+.special-christmas header button svg,
+.special-christmas header [class*="theme-toggle"] {
+    background: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    color: inherit !important;
+}
+
+.special-christmas header nav svg,
+.special-christmas header button[aria-label*="theme"] svg,
+.special-christmas header button[aria-label*="Theme"] svg {
+    animation: none !important;
+    filter: none !important;
+}
+
+.special-christmas header a[href="/admin"],
+.special-christmas header a[href="/admin"] button {
+    background: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+}
+
+.special-christmas header .w-10.h-10 {
+    background: linear-gradient(135deg, #C41E3A, #165B33) !important;
+    animation: garland-rotate 30s linear infinite !important;
+    box-shadow: 0 0 25px rgba(196, 30, 58, 0.6) !important;
+}
