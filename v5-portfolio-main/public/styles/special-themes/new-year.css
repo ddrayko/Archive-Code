@@ -1,0 +1,454 @@
+.special-new-year {
+    
+    --gold-primary: #FFD700;
+    --gold-bright: #FFF4A3;
+    --gold-deep: #B8860B;
+    --gold-rose: #E6BE8A;
+    --champagne: #F7E7CE;
+    --bronze: #CD7F32;
+    --amber: #FFBF00;
+
+    
+    --festive-red: #DC143C;
+    --festive-green: #228B22;
+    --midnight-blue: #191970;
+    --starlight: #FFFACD;
+
+    
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --accent: 45 100% 60%;
+    --accent-foreground: 0 0% 0%;
+    --ring: 48 100% 50%;
+    --border: 45 40% 70%;
+}
+
+.special-new-year.dark,
+.dark .special-new-year {
+    --background: 240 10% 5%;
+    --foreground: 45 100% 95%;
+    --card: 240 8% 8%;
+    --card-foreground: 45 100% 95%;
+    --popover: 240 8% 8%;
+    --popover-foreground: 45 100% 95%;
+    --primary: 48 100% 60%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 45 30% 20%;
+    --secondary-foreground: 45 100% 95%;
+    --muted: 45 20% 15%;
+    --muted-foreground: 45 60% 70%;
+    --accent: 45 100% 65%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 40% 25%;
+    --input: 45 40% 25%;
+    --ring: 48 100% 60%;
+}
+
+.special-new-year:not(.dark) {
+    --background: 45 40% 98%;
+    --foreground: 45 20% 10%;
+    --card: 45 30% 95%;
+    --card-foreground: 45 20% 10%;
+    --popover: 45 30% 95%;
+    --popover-foreground: 45 20% 10%;
+    --primary: 45 90% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 20% 85%;
+    --secondary-foreground: 45 20% 10%;
+    --muted: 45 20% 90%;
+    --muted-foreground: 45 15% 35%;
+    --accent: 45 90% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 30% 80%;
+    --input: 45 30% 80%;
+    --ring: 45 90% 45%;
+}
+
+@keyframes float-particles {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) translateX(50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes golden-shine {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes golden-glow-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+            0 0 40px rgba(255, 215, 0, 0.2),
+            0 0 60px rgba(255, 215, 0, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.5),
+            0 0 60px rgba(255, 215, 0, 0.3),
+            0 0 90px rgba(255, 215, 0, 0.2);
+    }
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes festive-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.special-new-year .text-gradient,
+.special-new-year h1,
+.special-new-year h2 {
+    background: linear-gradient(135deg,
+            #FFD700 0%,
+            #FFF4A3 15%,
+            #FFED4E 30%,
+            #FFD700 45%,
+            #FFA500 60%,
+            #FF8C00 75%,
+            #FFD700 90%,
+            #FFF4A3 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: golden-shine 4s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+}
+
+.special-new-year button,
+.special-new-year .button,
+.special-new-year a[class*="button"] {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+    background-size: 200% 200%;
+    animation: golden-shine 3s ease infinite;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4),
+        0 4px 15px rgba(255, 165, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.special-new-year button:hover,
+.special-new-year .button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6),
+        0 8px 25px rgba(255, 165, 0, 0.4);
+}
+
+.special-new-year .glass,
+.special-new-year [class*="card"],
+.special-new-year .mesh-bg {
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    background: linear-gradient(135deg,
+            rgba(255, 215, 0, 0.05),
+            rgba(255, 165, 0, 0.02));
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.15),
+        inset 0 0 20px rgba(255, 215, 0, 0.05);
+    animation: golden-glow-pulse 3s ease-in-out infinite;
+}
+
+.special-new-year .animate-pulse-glow {
+    background: radial-gradient(circle,
+            rgba(255, 215, 0, 0.4) 0%,
+            rgba(255, 165, 0, 0.3) 25%,
+            rgba(255, 140, 0, 0.2) 50%,
+            rgba(184, 134, 11, 0.1) 75%,
+            transparent 100%);
+    animation: golden-glow-pulse 4s ease-in-out infinite;
+    filter: blur(60px);
+}
+
+.special-new-year.dark header,
+.dark .special-new-year header {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.9),
+            rgba(25, 25, 25, 0.8));
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+}
+
+.special-new-year:not(.dark) header {
+    background: rgb(255, 255, 255) !important;
+    
+    border-bottom: 2px solid rgba(184, 134, 11, 0.4) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+}
+
+.special-new-year:not(.dark) header nav a,
+.special-new-year:not(.dark) header nav button,
+.special-new-year:not(.dark) header a,
+.special-new-year:not(.dark) header button {
+    color: rgb(30, 30, 30) !important;
+    
+}
+
+.special-new-year:not(.dark) header nav a:hover,
+.special-new-year:not(.dark) header nav button:hover {
+    color: rgb(0, 0, 0) !important;
+    
+}
+
+.special-new-year header .w-10.h-10 {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    animation: festive-rotate 20s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.special-new-year a:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.special-new-year svg,
+.special-new-year [class*="icon"] {
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3));
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.special-new-year .inline-flex.items-center.px-4.py-2 {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1));
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.special-new-year.dark footer,
+.dark .special-new-year footer {
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.95),
+            rgba(25, 25, 25, 0.9));
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.special-new-year:not(.dark) footer {
+    background: rgb(255, 255, 255) !important;
+    
+    border-top: 2px solid rgba(184, 134, 11, 0.4) !important;
+    color: rgb(30, 30, 30) !important;
+}
+
+.special-new-year:not(.dark) footer p,
+.special-new-year:not(.dark) footer a,
+.special-new-year:not(.dark) footer h5,
+.special-new-year:not(.dark) footer li {
+    color: rgb(30, 30, 30) !important;
+}
+
+.special-new-year:not(.dark) footer a:hover {
+    color: rgb(0, 0, 0) !important;
+}
+
+.golden-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: float-particles 15s linear infinite;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.golden-confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: confetti-fall 5s linear infinite;
+}
+
+@keyframes firework {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.8);
+    }
+
+    100% {
+        transform: translate(var(--x), var(--y));
+        opacity: 0;
+        box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0);
+    }
+}
+
+.firework-particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: firework 1s ease-out forwards;
+}
+
+.special-new-year .new-year-text {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #FFD700, #FFF4A3, #FFD700);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: golden-shine 2s linear infinite;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+}
+
+.special-new-year {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%23FFD700" opacity="0.5"/><circle cx="16" cy="16" r="4" fill="%23FFA500"/></svg>') 16 16, auto;
+}
+
+.special-new-year ::selection {
+    background: rgba(255, 215, 0, 0.3);
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.special-new-year ::-webkit-scrollbar {
+    width: 12px;
+}
+
+.special-new-year ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.special-new-year ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #FFD700, #FFA500);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.special-new-year ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FFF4A3, #FFD700);
+}
+
+.special-new-year header nav a,
+.special-new-year header nav button {
+    background: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    filter: none !important;
+}
+
+.special-new-year header nav a:hover,
+.special-new-year header nav button:hover {
+    color: inherit !important;
+    text-shadow: none !important;
+    transform: translateY(-2px) !important;
+    background: none !important;
+}
+
+.special-new-year header button[aria-label*="theme"],
+.special-new-year header button[aria-label*="Theme"],
+.special-new-year header button svg,
+.special-new-year header [class*="theme-toggle"] {
+    background: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    color: inherit !important;
+}
+
+.special-new-year header button[aria-label*="theme"]:hover,
+.special-new-year header button[aria-label*="Theme"]:hover {
+    background: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.special-new-year header nav svg,
+.special-new-year header button[aria-label*="theme"] svg,
+.special-new-year header button[aria-label*="Theme"] svg {
+    animation: none !important;
+    filter: none !important;
+}
+
+.special-new-year header a[href="/admin"],
+.special-new-year header a[href="/admin"] button {
+    background: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+}
+
+.special-new-year header nav {
+    color: inherit !important;
+}
+
+.special-new-year header nav a,
+.special-new-year header nav button {
+    font-weight: inherit !important;
+    text-decoration: none !important;
+}
+
+.special-new-year header button:not([class*="w-10"]):not([class*="h-10"]) {
+    background: transparent !important;
+    animation: none !important;
+    box-shadow: none !important;
+}
+
+.special-new-year header .w-10.h-10 {
+    background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+    animation: festive-rotate 20s linear infinite !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5) !important;
+}
